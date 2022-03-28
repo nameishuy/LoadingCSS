@@ -1,0 +1,72 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: black;
+}
+
+.Wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+    .Circle{
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        animation: circle .5s infinite ease-in-out forwards;
+    }
+        .Circle::before{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            content: '';
+            top: 0;
+            left: 0;
+            box-shadow: 0 0 10px 0 rgb(78, 78, 78);
+        }
+    .Wrapper span{
+        color: white;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-size: 20px;
+        animation: toVisibleRight 3s infinite ease-in-out forwards;
+    }
+
+@keyframes toVisibleRight{
+    0%{
+        opacity: 0;
+
+    }
+    100%{
+        opacity: 1;
+    }
+}
+@keyframes circle{
+    0%{
+        transform: rotate(0deg);
+        box-shadow: 1px 5px 2px 0 #009FFF,
+        1px 5px 5px 0 #ec2F4B,
+        1px 5px 10px 0 #6A82FB;
+    }
+    25%{
+        transform: rotate(90deg);
+        box-shadow: 1px 5px 2px 0 #009FFF,
+        1px 5px 5px 0 #ec2F4B,
+        1px 5px 10px 0 #6A82FB;
+    }
+    50%{
+        transform: rotate(180deg);
+        box-shadow: 1px 5px 2px 0 #009FFF,
+        1px 5px 5px 0 #ec2F4B,
+        1px 5px 10px 0 #6A82FB;
+    }
+    100%{
+        transform: rotate(360deg);
+        box-shadow: 1px 5px 2px 0 #009FFF,
+        1px 5px 5px 0 #ec2F4B,
+        1px 5px 10px 0 #6A82FB;
+    }
+}
